@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>$locationChangeStart</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div class="frame" ng-controller="myController">
+        <div>current URL：{{current}}</div>
+        <div>previousURL：{{previous}}</div>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp', [])
+        .controller('myController', function ($rootScope, $window, $location, $scope) {
+            $rootScope.$on('$locationChangeStart', function (evt, current, previous) {
+                $scope.current = current;
+                $scope.previous = previous;
+            });
+        });
+    </script>
+</body>
+</html>

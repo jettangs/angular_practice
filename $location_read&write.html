@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div class="frame" ng-controller="myController">
+        <div>url：{{url}}</div>
+        <div>hash: {{hash}}</div>
+        <div>search：{{search}}</div>
+        <div>path：{{path}}</div>
+        <button ng-click="click_a()">modefiy</button>
+    </div>
+    <script type="text/javascript">
+        angular.module('myApp', [])
+        .controller('myController', function ($scope, $location) {
+            $scope.url = $location.url()
+            $scope.hash = $location.hash()
+            $scope.search = $location.search();
+            $scope.path = $location.path();
+            $scope.click_a = function () {
+                $location.search({ c: '3', d: '4' });
+            }
+        });
+    </script>
+</body>
+</html>
