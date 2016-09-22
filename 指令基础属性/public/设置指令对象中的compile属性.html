@@ -1,20 +1,11 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_5">
+<html ng-app="myApp">
 <head>
     <title>设置指令对象中的compile属性</title>
-    <script src="../Script/angular.min.js"></script>
-    <style type="text/css">
-        .frame {
-            padding: 2px 8px;
-            margin: 0px;
-            font-size: 12px;
-            width: 320px;
-            background-color: #eee;
-        }
-    </style>
+    <script src="angular.min.js"></script>
 </head>
 <body>
-    <div class="frame" ng-controller="c8_5">
+    <div class="frame" ng-controller="myController">
         <ts-a>
             <ts-b>
                 {{tip}}
@@ -22,8 +13,8 @@
         </ts-a>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_5', [])
-        .controller('c8_5', function ($scope) {
+        var app = angular.module('myApp', [])
+        .controller('myController', function ($scope) {
             $scope.tip = "跟踪compile执行过程"
         })
         .directive('tsA', function () {

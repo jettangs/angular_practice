@@ -1,24 +1,7 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_8">
+<html ng-app="myApp">
 <head>
-    <title>一个使用require和controller属性的示例</title>
-    <script src="../Script/angular.min.js"></script>
-    <style type="text/css">
-        .frame {
-            padding: 2px 8px;
-            margin: 0px;
-            font-size: 12px;
-            width: 320px;
-            background-color: #eee;
-        }
-
-        .tip {
-            font-size: 9px;
-            color: #666;
-            margin: 3px 0px;
-            padding: 5px 0px;
-        }
-    </style>
+    <script src="angular.min.js"></script>
 </head>
 <body>
     <div class="frame">
@@ -27,17 +10,17 @@
             <ts-child>
                 <div class="tip">{{ctip}}</div>
             </ts-child>
-            <button ng-click="click()">换位</button>
+            <button ng-click="click()">change</button>
         </ts-parent>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_8', [])
+        var app = angular.module('myApp', [])
         .directive('tsParent', function () {
             return {
                 restrict: 'EAC',
                 controller: function ($scope, $compile, $http) {
                     this.addChild = function (c) {
-                        $scope.ptip = "今天天气不错！";
+                        $scope.ptip = "nice day！";
                         $scope.click = function () {
                             $scope.tmp = $scope.ptip;
                             $scope.ptip = c.ctip;
@@ -52,7 +35,7 @@
                 restrict: 'EAC',
                 require: '^?tsParent',
                 link: function (scope, iEle, iAttrs, ctrl) {
-                    scope.ctip = '气温正好18摄氏度。';
+                    scope.ctip = '26。';
                     ctrl.addChild(scope);
                 }
             };

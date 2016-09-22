@@ -1,17 +1,8 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_1">
+<html ng-app="myApp">
 <head>
     <title>创建一个新的指令</title>
-    <script src="../Script/angular.min.js"></script>
-    <style type="text/css">
-        .frame {
-            padding: 2px 8px;
-            margin: 0px;
-            font-size: 12px;
-            width: 320px;
-            background-color: #eee;
-        }
-    </style>
+    <script src="angular.min.js"></script>
 </head>
 <body>
     <div class="frame">
@@ -21,7 +12,7 @@
         <div data-ts-hello></div>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_1', []);
+        var app = angular.module('myApp', []);
         app.directive('tsHello', function () {
             return {
                 restrict: 'EAC',
