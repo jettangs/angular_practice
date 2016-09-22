@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_6">
+<html ng-app="myApp">
 <head>
     <script src="angular.min.js"></script>
     <script type="text/ng-template" id="tpl">
@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="frame">
-        <input ng-model="message" placeholder="请输入提示内容" />
+        <input ng-model="message" placeholder="input" />
         <ts-message>固定</ts-message>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_6', [])
+        var app = angular.module('myApp', [])
         .directive('tsMessage', function () {
             return {
                 restrict: 'EAC',

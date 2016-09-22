@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_7">
+<html ng-app="myApp">
 <head>
     <script src="angular.min.js"></script>
     <script type="text/ng-template" id="tpl">
@@ -11,18 +11,18 @@
     </script>
 </head>
 <body>
-    <div class="frame" ng-controller="c8_7">
+    <div class="frame" ng-controller="myController">
         姓名：<input ng-model="text_name"
                   placeholder="请输入姓名" /><br />
         年龄：<input ng-model="text_age"
                   placeholder="请输入年龄" />
         <div class="tip">{{tip}}</div>
         <ts-json a-attr="{{text_name}}"
-                 b-attr="text_age" reset="reSet()">重置</ts-json>
+                 b-attr="text_age" reset="reSet()">reset</ts-json>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_7', [])
-        .controller('c8_7', function ($scope) {
+        var app = angular.module('myApp', [])
+        .controller('myController', function ($scope) {
             $scope.reSet = function () {
                 $scope.tip = "姓名与年龄重置成功！";
             }

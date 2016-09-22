@@ -1,25 +1,9 @@
 ﻿<!DOCTYPE html>
-<html ng-app="a8_4">
+<html ng-app="myApp">
 <head>
-    <title>设置指令对象中的link属性</title>
-    <script src="../Script/angular.min.js"></script>
-    <style type="text/css">
-        .frame {
-            padding: 2px 8px;
-            margin: 0px;
-            font-size: 12px;
-            width: 320px;
-            background-color: #eee;
-        }
-
-        .tip {
-            font-size: 9px;
-            color: #666;
-            margin: 3px 5px;
-        }
-    </style>
+    <script src="angular.min.js"></script>
     <script type="text/ng-template" id="tpl">
-        <button>点击按钮</button>
+        <button>click</button>
     </script>
 </head>
 <body>
@@ -28,7 +12,7 @@
         <div class="tip">{{content}}</div>
     </div>
     <script type="text/javascript">
-        var app = angular.module('a8_4', [])
+        var app = angular.module('myApp', [])
         .directive('tsTplscipt', function () {
             return {
                 restrict: 'EAC',
@@ -37,7 +21,7 @@
                 link: function (scope, iEle, iAttrs) {
                     iEle.bind('click', function () {
                         scope.$apply(function () {
-                            scope.content = '这是点击后的显示的内容';
+                            scope.content = 'B';
                         })
                         iAttrs.$$element[0].disabled = true;
                     });
